@@ -1,0 +1,7 @@
+name: MultipleWorld
+version: '${project.version}'
+main: com.njdge.multipleworld.Main
+api-version: '1.20'
+commands:
+  mw:
+    description: Teleport to a specific map

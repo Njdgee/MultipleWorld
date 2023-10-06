@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MultipleWorld">
+    <output-path>$USER_HOME$/OneDrive/文件/Plugin</output-path>
+    <root id="archive" name="MultipleWorld.jar">
+      <element id="module-output" name="MultipleWorld" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>
