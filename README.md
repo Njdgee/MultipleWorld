@@ -61,16 +61,6 @@ Supported world types: `void`, `normal`, `superflat`.
 /mw setlobby
 ```
 
-## Permissions
-
-- `mw.*`: Grants access to all MultiWorld commands.
-- `mw.tp`: Allows teleportation to worlds.
-- `mw.import`: Allows importing worlds.
-- `mw.save`: Allows saving worlds.
-- `mw.del`: Allows deleting worlds.
-- `mw.create`: Allows creating new worlds.
-- `mw.setlobby`: Allows setting the server lobby.
-
 ## Examples
 
 1. Teleport to a world:
@@ -108,6 +98,70 @@ Supported world types: `void`, `normal`, `superflat`.
 - Ensure you have the necessary permissions (`mw.*` or specific subcommand permissions) to use MultiWorld commands.
 - Use `/mw help` for a quick in-game reference.
 
+## API
+
+### `loadMaps(String mapFolderName)`
+
+This method is used to load maps from the specified `mapFolderName` into the server. It copies the content of the map folder to the server's destination folder, making the map available for use.
+
+**Usage:**
+
+```java
+loadMaps("myMapFolder");
+```
+
+### `importMap(String mapFolderName)`
+
+This method is a wrapper for `loadMaps()`. It is used to import maps into the server, making them accessible for various operations.
+
+**Usage:**
+
+```java
+importMap("myMapFolder");
+```
+
+### `saveMap(String mapFolderName)`
+
+This method is responsible for saving the changes made to a map. It copies the content of the specified `mapFolderName` to the server's `Maps` folder.
+
+**Usage:**
+
+```java
+saveMap("myMapFolder");
+```
+
+### `delMap(String mapFolderName)`
+
+This method deletes a map, including unloading it and teleporting all players in that world to the server lobby. It also updates the lobby location in the configuration file.
+
+**Usage:**
+
+```java
+delMap("myMapFolder");
+```
+
+### `teleportToMap(Player player, String mapFolderName)`
+
+This method teleports a player to the specified map. It loads the map if not already loaded and teleports the player to the map's spawn location.
+
+**Usage:**
+
+```java
+Player player = // get the player object
+teleportToMap(player, "myMapFolder");
+```
+
+### `unloadWorld(String worldName)`
+
+This method unloads a world with the given `worldName` from the server. It's useful for freeing up server resources when a world is no longer needed.
+
+**Usage:**
+
+```java
+unloadWorld("myWorld");
+```
+
+Feel free to use these examples in your code without referencing the `API` class directly. This makes the code cleaner and more concise. Adjust the method names and descriptions as needed for clarity.
+
 ---
 
-Feel free to customize the guide based on additional features or specifics of your plugin. This guide is a starting point and can be expanded as needed.
