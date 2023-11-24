@@ -1,4 +1,3 @@
-Certainly! Here's a basic usage guide that you can include with your code when uploading it to GitHub:
 
 ---
 
